@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Evan Dorn"]
   s.date = %q{2011-01-25}
-  s.description = %q{Absolutely seamless unobtrusive javascript and AJAX for Rails using NinjaScript}
+  s.description = %q{Seamless UJS for Rails using NinjaScript}
   s.email = %q{evan@lrdesign.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -28,31 +28,33 @@ Gem::Specification.new do |s|
     "images/ui/spinner.gif",
     "javascripts/jquery-1.4.2.js",
     "javascripts/jquery.ninja_script.js",
-    "lib/lib/generators/rails/ninja_helper/erb_generator.rb",
-    "lib/lib/generators/rails/ninja_helper/scaffold_controller_generator.rb",
-    "lib/lib/generators/rails/ninja_helper/templates/_form.html.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/_form.html.haml",
-    "lib/lib/generators/rails/ninja_helper/templates/_row.html.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/_row.html.haml",
-    "lib/lib/generators/rails/ninja_helper/templates/controller.rb",
-    "lib/lib/generators/rails/ninja_helper/templates/create.js.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/destroy.js.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/edit.html.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/edit.html.haml",
-    "lib/lib/generators/rails/ninja_helper/templates/edit.js.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/index.html.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/index.html.haml",
-    "lib/lib/generators/rails/ninja_helper/templates/new.html.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/new.html.haml",
-    "lib/lib/generators/rails/ninja_helper/templates/new.js.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/show.html.erb",
-    "lib/lib/generators/rails/ninja_helper/templates/show.html.haml",
-    "lib/lib/generators/rails/ninja_helper/templates/update.js.erb",
-    "lib/lib/logical/ninja_helper.rb",
-    "lib/lib/logical/ninja_helper_railtie.rb",
-    "lib/lib/logical/ninja_link_helper.rb",
-    "lib/lib/tasks/ninja_helper.rake",
+    "lib/generators/rails/ninja_helper/erb_generator.rb",
+    "lib/generators/rails/ninja_helper/scaffold_controller_generator.rb",
+    "lib/generators/rails/ninja_helper/templates/_form.html.erb",
+    "lib/generators/rails/ninja_helper/templates/_form.html.haml",
+    "lib/generators/rails/ninja_helper/templates/_row.html.erb",
+    "lib/generators/rails/ninja_helper/templates/_row.html.haml",
+    "lib/generators/rails/ninja_helper/templates/controller.rb",
+    "lib/generators/rails/ninja_helper/templates/create.js.erb",
+    "lib/generators/rails/ninja_helper/templates/destroy.js.erb",
+    "lib/generators/rails/ninja_helper/templates/edit.html.erb",
+    "lib/generators/rails/ninja_helper/templates/edit.html.haml",
+    "lib/generators/rails/ninja_helper/templates/edit.js.erb",
+    "lib/generators/rails/ninja_helper/templates/index.html.erb",
+    "lib/generators/rails/ninja_helper/templates/index.html.haml",
+    "lib/generators/rails/ninja_helper/templates/new.html.erb",
+    "lib/generators/rails/ninja_helper/templates/new.html.haml",
+    "lib/generators/rails/ninja_helper/templates/new.js.erb",
+    "lib/generators/rails/ninja_helper/templates/show.html.erb",
+    "lib/generators/rails/ninja_helper/templates/show.html.haml",
+    "lib/generators/rails/ninja_helper/templates/update.js.erb",
+    "lib/logical/ninja_helper.rb",
+    "lib/logical/ninja_helper_railtie.rb",
+    "lib/logical/ninja_link_helper.rb",
     "lib/ninja_helper.rb",
+    "lib/tasks/ninja_helper.rake",
+    "ninja_helper.gemspec",
+    "rails/init.rb",
     "stylesheets/ninjascript.css",
     "stylesheets/ninjascript.sass",
     "stylesheets/sass/ninjascript.sass"
@@ -71,15 +73,18 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rspec>, [">= 1.5"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_development_dependency(%q<rcov>, [">= 0"])
     else
       s.add_dependency(%q<rspec>, [">= 1.5"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_dependency(%q<rcov>, [">= 0"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.5"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+    s.add_dependency(%q<rcov>, [">= 0"])
   end
 end
 

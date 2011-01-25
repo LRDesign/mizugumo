@@ -12,7 +12,7 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "NinjaHelper"
+  gem.name = "ninja_helper"
   gem.homepage = "http://github.com/IdahoEv/ninja_helper"
   gem.license = "MIT"
   gem.summary = %Q{Seamless UJS for Rails using NinjaScript}
