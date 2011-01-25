@@ -12,11 +12,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "ninja_helper"
+  gem.name = "NinjaHelper"
   gem.homepage = "http://github.com/IdahoEv/ninja_helper"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Seamless UJS for Rails using NinjaScript}
+  gem.description = %Q{Seamless UJS for Rails using NinjaScript}
   gem.email = "evan@lrdesign.com"
   gem.authors = ["Evan Dorn"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
@@ -33,12 +33,12 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
+# require 'rcov/rcovtask'
+# Rcov::RcovTask.new do |test|
+#   test.libs << 'test'
+#   test.pattern = 'test/**/test_*.rb'
+#   test.verbose = true
+# end
 
 task :default => :test
 
