@@ -1,0 +1,8 @@
+= content_tag_for :tr, product do
+  %td= product.name
+  %td= truncate product.description
+  %td= product.price
+  %td= link_to 'Show', product
+  %td= link_to 'Edit', edit_product_path(product), :class => "make_ajax"
+  %td= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete
+  %td= link_to 'AJAX Delete', product, :confirm => 'Are you sure?', :method => :delete, :class => "make_ajax"

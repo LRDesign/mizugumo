@@ -1,0 +1,45 @@
+These are notes to myself to hopefully avoid this kind of suffering again.
+
+I ran into some troubles (a few hours worth)  trying to get the generators
+working.
+
+Rails wants to load generators from specific "namespaces", but parts of those
+namespaces are automatically generated.   In particular, when a generator is
+invoked, it will generally be looked for with both a "base" and a "context".
+Rails will use *one* of these two when looking, for example, it will look for:
+
+   <base>/<your generator>     and    <your generator>/<context>.
+
+These are interdependent; particularly, setting up a scaffold_controller
+generator will cause part of it's namespace to be assumed when looking for
+the other items, like template_engine and test_framework.
+
+For example, setting scaffold_generator to "ninja_helper:scaffold_controller"
+will cause it to assume a base of "ninja_helper" and a context of "scaffold"
+when you run "rails generate scaffold", which will make it look for your view
+generator in "ninja_helper:erb" and "erb:scaffold", even if you don't explicitly
+set template_engine to anything.
+
+The fix for this was to specify the hooks for template_engine etc. with an
+:in => :rails parameter which causes it to look in the rails namespace
+(and thus retrieve the defaults) unless configs in application.rb specifically
+override those generators.
+
+Ultimately, Rails will generate eight acceptable namespaces for the
+generator based on the requested name in config in application.rb
+***It must live in one of those paths on the filesystem.***  However, the
+actual ruby module namespace does not need to match (seems to be irrelevant).
+The Rails 'namespace' can be massaged just by setting self.namespace(blah)
+in the class, for example:
+
+  self.namespace("rails:ninja_helper:erb")
+
+This lives in generators/rails/ninja_helper/erb_generator.rb, which is
+one of the acceptable namespaces/paths for a beast with this config:
+
+config.generators do |g|
+  g.template_engine 'ninja_helper:erb'
+end
+
+
+

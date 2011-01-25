@@ -1,0 +1,17 @@
+- @product ||= Product.new
+= form_for(@product) do |f|
+
+  .field
+    = f.label :name
+    = f.text_field :name
+
+  .field
+    = f.label :description
+    = f.text_area :description, :rows => 4
+
+  .field
+    = f.label :price
+    = f.text_field :price
+
+  .actions
+    = f.submit
