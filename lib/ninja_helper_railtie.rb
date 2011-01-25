@@ -1,4 +1,3 @@
-p "!!!!!!!!!!!!Loading NH railtie"
 
 class NinjaHelperRailtie < Rails::Railtie
   railtie_name :ninja_helper
@@ -10,6 +9,5 @@ class NinjaHelperRailtie < Rails::Railtie
   generators do
     require 'generators/rails/ninja_helper/scaffold_controller_generator'
     require 'generators/rails/ninja_helper/erb_generator'
-    p "!!!!!!!!!Requiring generators"
   end
 end

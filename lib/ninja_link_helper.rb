@@ -1,4 +1,3 @@
-p "!!!!!!!!!!!!Loading NH link helper"
 
 module NinjaLinkHelper
   include ActionView::Helpers::UrlHelper

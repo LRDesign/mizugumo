@@ -41,7 +41,7 @@ module NinjaHelper
     end
 
     def js_views
-      %(create destroy edit new update)
+      %w(create destroy edit new update)
     end
 
   end
