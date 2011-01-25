@@ -1,4 +1,6 @@
-module Logical::NinjaLinkHelper
+p "!!!!!!!!!!!!Loading NH link helper"
+
+module NinjaLinkHelper
   include ActionView::Helpers::UrlHelper
 
   # Redefined link_to to provide Ninja-style
@@ -49,4 +51,3 @@ module Logical::NinjaLinkHelper
     end
   end
 end
-
