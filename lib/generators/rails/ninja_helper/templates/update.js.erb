@@ -1,2 +1,4 @@
-$("#<%= dom_id(@product) %>").replaceWith("<%= escape_javascript(render(@product)) %>")
-$("#products form").remove()
+$("#<%%= dom_id(@<%= singular_table_name %>) %>").replaceWith(
+  "<%%= escape_javascript(render(@<%= singular_table_name %>)) %>"
+)
+$("#<%= plural_table_name %> form").remove()

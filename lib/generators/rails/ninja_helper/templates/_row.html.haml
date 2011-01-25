@@ -1,8 +1,13 @@
-= content_tag_for :tr, product do
-  %td= product.name
-  %td= truncate product.description
-  %td= product.price
-  %td= link_to 'Show', product
-  %td= link_to 'Edit', edit_product_path(product), :class => "make_ajax"
-  %td= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete
-  %td= link_to 'AJAX Delete', product, :confirm => 'Are you sure?', :method => :delete, :class => "make_ajax"
+= content_tag_for :tr, <%= singular_table_name %> do
+  <% for attribute in attributes -%>
+    .field
+      = f.label :<%= attribute.name %> %>
+      %br
+      = f.<%= attribute.field_type %> :<%= attribute.name %>
+  <% end -%>
+    .actions
+      <%%= f.submit %>
+
+  %td= link_to 'Show', <%= singular_table_name %>
+  %td= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => "make_ajax"
+  %td= link_to 'Delete', <%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete

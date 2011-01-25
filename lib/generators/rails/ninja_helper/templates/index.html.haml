@@ -1,13 +1,13 @@
-%h1 List of Products
+%h1 List of <%= plural_table_name %>
 
-#products
+#<%= plural_table_name %>
   %table
     %tr
-      %th Name
-      %th Description
-      %th Price
-      %th{:colspan => 4}
-    =render @products
+      <%= for attribute in attributes %>
+        %th <%= attribute.human_name %>
+      <% end %>
+      %th{:colspan => 3}
+    =render @<%= plural_table_name %>
 
-= link_to 'New Product', new_product_path, :class => "make_ajax"
+  = link_to 'New <%= class_name %>', new_<%= singular_table_name %>_path, :class => 'new_record_link'
 

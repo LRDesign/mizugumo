@@ -1,2 +1,2 @@
-$("#products table tbody").append("<%= escape_javascript(render(@product)) %>")
-$("#products form").remove()
+$("#<%= plural_table_name %> tbody").append("<%%= escape_javascript(render(@<%= singular_table_name %>)) %>")
+$("#<%= plural_table_name %> form").remove()

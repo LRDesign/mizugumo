@@ -1,2 +1,2 @@
-$("#products").append("<%= escape_javascript(render :partial => 'form') %>")
+$("#<%= plural_table_name %>").append("<%%= escape_javascript(render :partial => 'form') %>")
 

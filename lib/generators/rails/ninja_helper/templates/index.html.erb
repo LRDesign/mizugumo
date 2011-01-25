@@ -1,15 +1,18 @@
-<h1>Listing <%= plural_table_name %></h1>
+<h1>Listing <%= plural_table_name.humanize %></h1>
 
-<table>
-  <tr>
-<% for attribute in attributes -%>
-    <th><%= attribute.human_name %></th>
-<% end -%>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  <%%= render @<%= plural_table_name %> %>
-</table>
+<div id="<%= plural_table_name %>">
+  <table>
+    <tr>
+  <% for attribute in attributes -%>
+      <th><%= attribute.human_name %></th>
+  <% end -%>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <%%= render @<%= plural_table_name %> %>
+  </table>
 
-<%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path %>
+  <%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path %>, :class => 'new_record_link'
+
+</div>

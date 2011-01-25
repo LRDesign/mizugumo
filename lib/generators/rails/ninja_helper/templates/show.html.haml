@@ -1,12 +1,9 @@
+<% for attribute in attributes -%>
 %p
-  %b Name:
-  = @product.name
+  %b <%= attribute.human_name %>:
+  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+<% end -%>
 
-%p
-  %b Price:
-  = @product.price
-
-
-= link_to 'Edit', edit_product_path(@product)
+= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
 |
-= link_to 'Back', products_path
+= link_to 'Back', <%= plural_table_name %>_path

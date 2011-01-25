@@ -1,17 +1,22 @@
-- @product ||= Product.new
-= form_for(@product) do |f|
+- @<%= singular_table_name %> ||= <%= class_name %>.new
+= form_for(@<%= singular_table_name %>) do |f|
 
+<%% if @<%= singular_table_name %>.errors.any? %>
+  #error_explanation">
+    %h2 <%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:
+
+    %ul
+    <%% @<%= singular_table_name %>.errors.full_messages.each do |msg| %>
+      %li<%%= msg %>
+    <%% end %>
+<%% end %>
+
+<% for attribute in attributes -%>
   .field
-    = f.label :name
-    = f.text_field :name
-
-  .field
-    = f.label :description
-    = f.text_area :description, :rows => 4
-
-  .field
-    = f.label :price
-    = f.text_field :price
-
+    <%%= f.label :<%= attribute.name %> %>
+    %br
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+<% end -%>
   .actions
-    = f.submit
+    <%%= f.submit %>
+<%% end %>
