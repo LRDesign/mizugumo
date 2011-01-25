@@ -59,7 +59,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/IdahoEv/ninja_helper}
   s.licenses = ["MIT"]
-  s.require_paths = ["lib/logical/ninja_helper"]
+  s.require_paths = ["lib/"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Seamless UJS for Rails using NinjaScript}
 
