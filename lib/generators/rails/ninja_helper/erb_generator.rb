@@ -2,7 +2,7 @@ require 'rails/generators/resource_helpers'
 
 module NinjaHelper
   class ErbGenerator < Rails::Generators::NamedBase
-    include Rails::Generators::ResourceHelpers
+    include ::Rails::Generators::ResourceHelpers
 
     self.namespace("rails:ninja_helper:erb")
     source_root File.dirname(__FILE__) + '/templates'
@@ -32,6 +32,17 @@ module NinjaHelper
       filename = "_#{singular_table_name}.html.erb"
       say "templating filename #{filename}"
       template "_row.html.erb", File.join("app/views", controller_file_path, filename)
+    end
+
+    def add_javascript
+      file = File.join("public", "javascripts", "application.js")
+      append_to_file(file, :data => <<ADDITIONAL_JS
+Ninja.behavior({
+  '.new_#{singular_table_name}': Ninja.submitsAsAjax,
+  '.edit_#{singular_table_name}': Ninja.submitsAsAjax
+})
+ADDITIONAL_JS
+      )
     end
 
     protected
