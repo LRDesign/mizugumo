@@ -1,9 +1,26 @@
-= ninja_helper
+= NinjaHelper
 
-Description goes here.
+NinjaHelper is a gem designed to provide Rails with JavaScript and AJAX behavior
+that is 1) absolutely seamless  2) completely unobtrusive - no markup whatsoever
+in your HTML and 3) gracefully-degrading: defaults to fully functional and
+sensible page-reload behavior when javascript is not available.
 
-== Contributing to ninja_helper
- 
+ in Rails, using the NinjaScript UJS library by Judson
+Lester.
+
+NinjaHelper is currently in development and is not ready for public use.  We
+are expecting a release later this week (note written 1/26/2010).
+
+== Features
+
+NinjaHelper's main features are:
+* Easy tools for installing NinjaScript
+* A rails helper to automatically output <form>s instead of <a> tags when link_to is called with a :method other than GET.   This allows these links to function as intended for users who lack javascript.
+* A default NinjaScript behavior (in your application.js) that automatically converts those forms back into the expected links when Javascript is available, resulting in transparent usability for JS users.
+* A scaffold generator that builds both both AJAX behavior and page-reload  behavior in the controller and view.  Out of the box, your scaffolded    controller will function in AJAX mode when JS is available but will degrade    properly when JS is not available, retaining functionality.
+
+== Contributing to NinjaHelper
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -14,6 +31,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Evan Dorn. See LICENSE.txt for
+Copyright (c) 2011 Evan Dorn and Logical Reality design. See LICENSE.txt for
 further details.
 
