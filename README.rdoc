@@ -18,12 +18,12 @@ NinjaHelper's main features are:
 * Easy tools for installing NinjaScript
 * A rails helper to automatically output <form>s instead of <a> tags when link_to is called with a :method other than GET.   This allows these links to function as intended for users who lack javascript.
 * A default NinjaScript behavior (in your application.js) that automatically converts those forms back into the expected links when Javascript is available, resulting in transparent usability for JS users.
-* A scaffold generator that builds both both AJAX behavior and page-reload  behavior in the controller and view.  Out of the box, your scaffolded    controller will function in AJAX mode when JS is available but will degrade    properly when JS is not available, retaining functionality.
+* A scaffold generator that builds both both AJAX behavior and standard "page-reload"  behavior in the controller and view and adds NinjaScript  behaviors to application.js to activate AJAX.  Out of the box, your scaffolded controller will function as an AJAX controller when JS is available but will degrade properly when JS is not available.
 
 == Installing
 
 NinjaHelper is compatible with Rails >= 3.0.0.   We have not tested it with any prior versions of
-Rails.
+Rails.   If you use it with an earlier Rails and it works, let us know!
 
 First, add NinjaHelper to your gemfile:
 
@@ -31,7 +31,7 @@ First, add NinjaHelper to your gemfile:
 
 Second, install NinjaHelper files:
 
-  > rake ninja_helper:install
+  > rails generate ninja_helper:install
 
 Third, link to jQuery and NinjaScript in your application layout, plus the optional ninjascript.css.  If using ERB, add these lines:
 
@@ -51,7 +51,7 @@ NOTE:  If you still have javascript_include_tag :defaults, you probably want to 
 Ninjascript is meant to work with jQuery, and we don't know what happens if you try to run it
 side-by-side with Prototype.
 
-== Example scaffold
+== Scaffold generator
 
 NinjaHelper ships with a scaffold generator that builds out-of-the-box AJAX/UJS scaffolds that degrade gracefully in the absence of JavaScript.   To use it, add this to config/application.rb:
 
