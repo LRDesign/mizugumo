@@ -13,6 +13,6 @@
     <%%= render @<%= plural_table_name %> %>
   </table>
 
-  <%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'new_record' %>
+  <%%= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'new_<%= singular_table_name %>' %>
 
 </div>

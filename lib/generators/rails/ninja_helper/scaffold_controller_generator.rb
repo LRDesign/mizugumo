@@ -1,6 +1,5 @@
 require 'rails/generators/resource_helpers'
 
-p "!!!!!!!!!! Scaffold generator file being loaded "
 module NinjaHelper
   class ScaffoldControllerGenerator < Rails::Generators::NamedBase
     include Rails::Generators::ResourceHelpers
@@ -23,7 +22,5 @@ module NinjaHelper
     hook_for :helper, :in => :rails, :as => :scaffold do |invoked|
       invoke invoked, [ controller_name ]
     end
-
-    p "Loaded Scaffold Controller Generator, namespace is #{self.namespace}"
   end
 end
