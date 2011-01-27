@@ -1,5 +1,8 @@
 *~
 *.gem
+.sass-cache
+.sass-cache/*
+
 # rcov generated
 coverage
 
@@ -27,14 +30,10 @@ pkg
 #
 # Not sure what to needs to be ignored for particular editors/OSes? Here's some ideas to get you started. (Remember, remove the leading # of the line)
 #
-# For MacOS:
-#
-#.DS_Store
-#
-# For TextMate
-#*.tmproj
-#tmtags
-#
+.DS_Store
+*.tmproj
+tmtags
+
 # For emacs:
 #*~
 #\#*

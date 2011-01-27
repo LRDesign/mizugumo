@@ -3,6 +3,7 @@ GEM
   specs:
     diff-lcs (1.1.2)
     git (1.2.5)
+    haml (3.0.25)
     jeweler (1.5.2)
       bundler (~> 1.0.0)
       git (>= 1.2.5)
@@ -23,6 +24,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.0.0)
+  haml
   jeweler (~> 1.5.2)
   rcov
   rspec (>= 1.5)

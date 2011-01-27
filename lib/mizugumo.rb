@@ -1,8 +1,8 @@
 module Mizugumo
   class Railtie < Rails::Railtie
-    require 'ninja_link_helper'
+    require 'mizugumo_link_helper'
 
-    ActionController::Base.helper(NinjaLinkHelper)
+    ActionController::Base.helper(MizugumoLinkHelper)
 
     generators do
       require 'generators/rails/mizugumo/scaffold_controller_generator'
