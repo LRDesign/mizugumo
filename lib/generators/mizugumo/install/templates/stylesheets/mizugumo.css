@@ -18,7 +18,7 @@ form {
   form .field {
     clear: all; }
 
-form.graceful_form {
+form.mizugumo_graceful_form {
   margin: 0;
   padding: 0;
   border: 0;
@@ -30,7 +30,7 @@ table.scaffold, table.scaffold td, table.scaffold th {
   table.scaffold td, table.scaffold th, table.scaffold td td, table.scaffold td th, table.scaffold th td, table.scaffold th th {
     padding: 0.5em; }
 
-form.ninja.graceful_form {
+form.mizugumo_graceful_form {
   margin: 0;
   padding: 0;
   border: 0;

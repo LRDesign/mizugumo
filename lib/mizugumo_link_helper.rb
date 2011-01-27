@@ -40,7 +40,7 @@ module MizugumoLinkHelper
     options       = args[0] || {}
     html_options  = args[1]
     action        = url_for(options)
-    cssclass      = [ 'mizugumo graceful_form' ]
+    cssclass      = [ 'mizugumo_graceful_form' ]
     cssclass      << html_options[:class] unless html_options[:class].blank?
 
     content_tag(:form,  :action => action, :method => :post, :title => title, :class => cssclass) do
