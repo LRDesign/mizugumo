@@ -1,7 +1,7 @@
 <h1>Listing <%= plural_table_name.humanize %></h1>
 
 <div id="<%= plural_table_name %>">
-  <table>
+  <table class="scaffold">
     <tr>
   <% for attribute in attributes -%>
       <th><%= attribute.human_name %></th>

@@ -1,3 +1,4 @@
 $("#<%%= dom_id(@<%= singular_table_name %>) %>").addClass('being_edited')
+$("#<%%= dom_id(@<%= singular_table_name %>) %> a").contents().unwrap()
 $("#<%= plural_table_name %>").append("<%%= escape_javascript(render :partial => 'form') %>")
 

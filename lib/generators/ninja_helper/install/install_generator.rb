@@ -12,9 +12,9 @@ DESC
       end
 
       def copy_files
-        directory 'images',     :destination => 'public/'
-        directory 'javascripts', :destination => 'public/'
-        directory 'stylesheets', :destination => 'public/'
+        directory 'images',     'public/images'
+        directory 'javascripts', 'public/javascripts'
+        directory 'stylesheets', 'public/stylesheets'
       end
 
       def add_javascript
@@ -31,6 +31,29 @@ ADDITIONAL_JS
         end
       end
 
+      def reminder
+        say (<<NOTICE
+
+NinjaHelper is installed!
+Remember to remove the default JS and link to the jQuery/NinjaScript
+script and CSS files by adding these to your application layout:
+
+  <%= stylesheet_link_tag 'ninja_helper.css' %>
+  <%= javascript_include_tag 'jquery-1.4.2.js' %>
+  <%= javascript_include_tag 'jquery.ninja_script.js' %>
+  <%= javascript_include_tag 'application.js' %>
+
+If you want to use the NinjaHelper AJAX scaffold generators, add this to your application.rb:
+
+  config.generators do |g|
+    g.scaffold_controller 'ninja_helper:scaffold_controller'
+    g.template_engine 'ninja_helper:erb'
+    # g.template_engine 'ninja_helper:haml' # If you prefer Haml over ERB
+  end
+
+NOTICE
+        )
+      end
     end
   end
 end
