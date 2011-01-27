@@ -3,11 +3,11 @@
 #<%= plural_table_name %>
   %table.scaffold
     %tr
-      <%= for attribute in attributes %>
-        %th <%= attribute.human_name %>
-      <% end %>
+<% for attribute in attributes -%>
+      %th <%= attribute.human_name %>
+<% end -%>
       %th{:colspan => 3}
     =render @<%= plural_table_name %>
 
-  = link_to 'New <%= class_name %>', new_<%= singular_table_name %>_path, :class => 'new_record'
+  = link_to 'New <%= class_name %>', new_<%= singular_table_name %>_path, :class => 'new_<%= singular_table_name %>'
 

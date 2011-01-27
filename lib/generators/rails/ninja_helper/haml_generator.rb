@@ -6,6 +6,7 @@ module NinjaHelper
     include ::Rails::Generators::ResourceHelpers
 
     self.namespace("rails:ninja_helper:haml")
+    source_root File.dirname(__FILE__) + '/templates'
 
     def copy_html_view_files
       HTML_VIEWS.each do |view|
