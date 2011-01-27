@@ -9,9 +9,22 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
-desc "regenerate the CSS from SASS source"
-task :regen_css do
-  sh 'sass lib/generators/mizugumo/install/templates/stylesheets/sass/mizugumo.sass lib/generators/mizugumo/install/templates/stylesheets/mizugumo.css'
+namespace :update do
+  desc "regenerate the CSS from SASS source"
+  task :css do
+    sh 'sass lib/generators/mizugumo/install/templates/stylesheets/sass/mizugumo.sass lib/generators/mizugumo/install/templates/stylesheets/mizugumo.css'
+  end
+
+  desc "get the most up-to-date version of NinjaScript"
+  task :ninja_script do
+    sh 'cd ../NinjaScript'
+    sh 'git checkout master'
+    sh 'git pull'
+    cp File.join(File.dirname(__FILE__), '..', 'NinjaScript', 'javascript', 'jquery.ninja_script.js'),
+       File.join(File.dirname(__FILE__), 'lib', 'generators', 'mizugumo', 'install', 'templates', 'javascripts')
+  end
+
+  task :ns => :ninja_script
 end
 
 require 'jeweler'
