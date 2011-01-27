@@ -1,11 +1,11 @@
 
-module NinjaLinkHelper
+module MizugumoLinkHelper
   include ActionView::Helpers::UrlHelper
 
-  # Redefined link_to to provide Ninja-style
+  # Redefined link_to to provide Mizugumo-style
   # graceful degradation.   If a :method option
   # was provided, this replaces the link with a form
-  # and specifies a class so that NinjaScript will
+  # and specifies a class so that MizugumoScript will
   # convert it to the expected link on Javascript-enabled
   # browsers.
   def link_to(*args, &block)
@@ -40,7 +40,7 @@ module NinjaLinkHelper
     options       = args[0] || {}
     html_options  = args[1]
     action        = url_for(options)
-    cssclass      = [ 'ninja graceful_form' ]
+    cssclass      = [ 'Mizugumo graceful_form' ]
     cssclass      << html_options[:class] unless html_options[:class].blank?
 
     content_tag(:form,  :action => action, :method => :post, :title => title, :class => cssclass) do

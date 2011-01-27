@@ -13,13 +13,13 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "mizugumo"
-  gem.homepage = "http://github.com/IdahoEv/mizugumo"
+  gem.homepage = "http://github.com/LRDesign/mizugumo"
   gem.license = "MIT"
   gem.summary = %Q{Seamless UJS for Rails using NinjaScript}
   gem.description = %Q{Seamless UJS for Rails using NinjaScript}
   gem.email = "evan@lrdesign.com"
   gem.authors = ["Evan Dorn"]
-  gem.require_paths = ['lib/logical/mizugumo']
+  gem.require_paths = ['lib']
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
