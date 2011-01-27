@@ -1,6 +1,6 @@
 require 'rails/generators/resource_helpers'
 
-module NinjaHelper
+module Mizugumo
   class ScaffoldControllerGenerator < Rails::Generators::NamedBase
     include Rails::Generators::ResourceHelpers
     self.namespace('rails:mizugumo:scaffold_controller')

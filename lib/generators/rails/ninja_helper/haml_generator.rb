@@ -1,7 +1,7 @@
 require 'rails/generators/resource_helpers'
 require 'generators/rails/mizugumo/view_generator'
 
-module NinjaHelper
+module Mizugumo
   class HamlGenerator < ViewGenerator
     include ::Rails::Generators::ResourceHelpers
 

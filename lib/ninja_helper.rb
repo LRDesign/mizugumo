@@ -1,4 +1,4 @@
-module NinjaHelper
+module Mizugumo
   class Railtie < Rails::Railtie
     require 'ninja_link_helper'
 

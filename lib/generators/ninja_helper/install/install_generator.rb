@@ -1,4 +1,4 @@
-module NinjaHelper
+module Mizugumo
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
@@ -34,7 +34,7 @@ ADDITIONAL_JS
       def reminder
         say (<<NOTICE
 
-NinjaHelper is installed!
+Mizugumo is installed!
 Remember to remove the default JS and link to the jQuery/NinjaScript
 script and CSS files by adding these to your application layout:
 
@@ -43,7 +43,7 @@ script and CSS files by adding these to your application layout:
   <%= javascript_include_tag 'jquery.ninja_script.js' %>
   <%= javascript_include_tag 'application.js' %>
 
-If you want to use the NinjaHelper AJAX scaffold generators, add this to your application.rb:
+If you want to use the Mizugumo AJAX scaffold generators, add this to your application.rb:
 
   config.generators do |g|
     g.scaffold_controller 'mizugumo:scaffold_controller'

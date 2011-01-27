@@ -1,6 +1,6 @@
 require 'rails/generators/resource_helpers'
 
-module NinjaHelper
+module Mizugumo
   class ViewGenerator < Rails::Generators::NamedBase
     include ::Rails::Generators::ResourceHelpers
 

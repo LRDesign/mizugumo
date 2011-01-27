@@ -1,20 +1,20 @@
-= NinjaHelper
+= Mizugumo
 
-NinjaHelper is a gem designed to provide Rails with JavaScript and AJAX behavior that is:
+Mizugumo is a gem designed to provide Rails with JavaScript and AJAX behavior that is:
 * absolutely seamless
 * completely unobtrusive - no markup whatsoever in your HTML and
 * gracefully-degrading: defaults to fully functional and
 sensible page-reload behavior when javascript is not available.
 
-NinjaHelper uses NinjaScript by Judson Lester to provide unobtrusive JS behaviors.   For more info, see:
+Mizugumo uses NinjaScript by Judson Lester to provide unobtrusive JS behaviors.   For more info, see:
   git@github.com:LRDesign/NinjaScript.git
 
-NinjaHelper is currently in development and is not ready for public use.  We
+Mizugumo is currently in development and is not ready for public use.  We
 are expecting a release later this week (note written 1/26/2010).
 
 == Features
 
-NinjaHelper's main features are:
+Mizugumo's main features are:
 * Easy tools for installing NinjaScript
 * A rails helper to automatically output <form>s instead of <a> tags when link_to is called with a :method other than GET.   This allows these links to function as intended for users who lack javascript.
 * A default NinjaScript behavior (in your application.js) that automatically converts those forms back into the expected links when Javascript is available, resulting in transparent usability for JS users.
@@ -22,14 +22,14 @@ NinjaHelper's main features are:
 
 == Installing
 
-NinjaHelper is compatible with Rails >= 3.0.0.   We have not tested it with any prior versions of
+Mizugumo is compatible with Rails >= 3.0.0.   We have not tested it with any prior versions of
 Rails.   If you use it with an earlier Rails and it works, let us know!
 
-First, add NinjaHelper to your gemfile:
+First, add Mizugumo to your gemfile:
 
   gem 'mizugumo'
 
-Second, install NinjaHelper files:
+Second, install Mizugumo files:
 
   > rails generate mizugumo:install
 
@@ -53,7 +53,7 @@ side-by-side with Prototype.
 
 == Scaffold generator
 
-NinjaHelper ships with a scaffold generator that builds out-of-the-box AJAX/UJS scaffolds that degrade gracefully in the absence of JavaScript.   To use it, add this to config/application.rb:
+Mizugumo ships with a scaffold generator that builds out-of-the-box AJAX/UJS scaffolds that degrade gracefully in the absence of JavaScript.   To use it, add this to config/application.rb:
 
 For ERB views:
 
@@ -70,7 +70,7 @@ For HAML views:
   end
 
 
-== Contributing to NinjaHelper
+== Contributing to Mizugumo
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
