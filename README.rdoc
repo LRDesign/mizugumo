@@ -27,11 +27,11 @@ Rails.   If you use it with an earlier Rails and it works, let us know!
 
 First, add NinjaHelper to your gemfile:
 
-  gem 'ninja_helper'
+  gem 'mizugumo'
 
 Second, install NinjaHelper files:
 
-  > rails generate ninja_helper:install
+  > rails generate mizugumo:install
 
 Third, link to jQuery and NinjaScript in your application layout, plus the optional ninjascript.css.  If using ERB, add these lines:
 
@@ -58,15 +58,15 @@ NinjaHelper ships with a scaffold generator that builds out-of-the-box AJAX/UJS 
 For ERB views:
 
   config.generators do |g|
-    g.scaffold_controller 'ninja_helper:scaffold_controller'
-    g.template_engine 'ninja_helper:erb'
+    g.scaffold_controller 'mizugumo:scaffold_controller'
+    g.template_engine 'mizugumo:erb'
   end
 
 For HAML views:
 
   config.generators do |g|
-    g.scaffold_controller 'ninja_helper:scaffold_controller'
-    g.template_engine 'ninja_helper:haml'
+    g.scaffold_controller 'mizugumo:scaffold_controller'
+    g.template_engine 'mizugumo:haml'
   end
 
 

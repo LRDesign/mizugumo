@@ -3,7 +3,7 @@ require 'rails/generators/resource_helpers'
 module NinjaHelper
   class ScaffoldControllerGenerator < Rails::Generators::NamedBase
     include Rails::Generators::ResourceHelpers
-    self.namespace('rails:ninja_helper:scaffold_controller')
+    self.namespace('rails:mizugumo:scaffold_controller')
 
     source_root File.dirname(__FILE__) + '/templates'
 

@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{ninja_helper}
+  s.name = %q{mizugumo}
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -28,36 +28,36 @@ Gem::Specification.new do |s|
     "images/ui/spinner.gif",
     "javascripts/jquery-1.4.2.js",
     "javascripts/jquery.ninja_script.js",
-    "lib/generators/rails/ninja_helper/erb_generator.rb",
-    "lib/generators/rails/ninja_helper/scaffold_controller_generator.rb",
-    "lib/generators/rails/ninja_helper/templates/_form.html.erb",
-    "lib/generators/rails/ninja_helper/templates/_form.html.haml",
-    "lib/generators/rails/ninja_helper/templates/_row.html.erb",
-    "lib/generators/rails/ninja_helper/templates/_row.html.haml",
-    "lib/generators/rails/ninja_helper/templates/controller.rb",
-    "lib/generators/rails/ninja_helper/templates/create.js.erb",
-    "lib/generators/rails/ninja_helper/templates/destroy.js.erb",
-    "lib/generators/rails/ninja_helper/templates/edit.html.erb",
-    "lib/generators/rails/ninja_helper/templates/edit.html.haml",
-    "lib/generators/rails/ninja_helper/templates/edit.js.erb",
-    "lib/generators/rails/ninja_helper/templates/index.html.erb",
-    "lib/generators/rails/ninja_helper/templates/index.html.haml",
-    "lib/generators/rails/ninja_helper/templates/new.html.erb",
-    "lib/generators/rails/ninja_helper/templates/new.html.haml",
-    "lib/generators/rails/ninja_helper/templates/new.js.erb",
-    "lib/generators/rails/ninja_helper/templates/show.html.erb",
-    "lib/generators/rails/ninja_helper/templates/show.html.haml",
-    "lib/generators/rails/ninja_helper/templates/update.js.erb",
-    "lib/ninja_helper.rb",
-    "lib/ninja_helper_railtie.rb",
+    "lib/generators/rails/mizugumo/erb_generator.rb",
+    "lib/generators/rails/mizugumo/scaffold_controller_generator.rb",
+    "lib/generators/rails/mizugumo/templates/_form.html.erb",
+    "lib/generators/rails/mizugumo/templates/_form.html.haml",
+    "lib/generators/rails/mizugumo/templates/_row.html.erb",
+    "lib/generators/rails/mizugumo/templates/_row.html.haml",
+    "lib/generators/rails/mizugumo/templates/controller.rb",
+    "lib/generators/rails/mizugumo/templates/create.js.erb",
+    "lib/generators/rails/mizugumo/templates/destroy.js.erb",
+    "lib/generators/rails/mizugumo/templates/edit.html.erb",
+    "lib/generators/rails/mizugumo/templates/edit.html.haml",
+    "lib/generators/rails/mizugumo/templates/edit.js.erb",
+    "lib/generators/rails/mizugumo/templates/index.html.erb",
+    "lib/generators/rails/mizugumo/templates/index.html.haml",
+    "lib/generators/rails/mizugumo/templates/new.html.erb",
+    "lib/generators/rails/mizugumo/templates/new.html.haml",
+    "lib/generators/rails/mizugumo/templates/new.js.erb",
+    "lib/generators/rails/mizugumo/templates/show.html.erb",
+    "lib/generators/rails/mizugumo/templates/show.html.haml",
+    "lib/generators/rails/mizugumo/templates/update.js.erb",
+    "lib/mizugumo.rb",
+    "lib/mizugumo_railtie.rb",
     "lib/ninja_link_helper.rb",
-    "lib/tasks/ninja_helper.rake",
-    "ninja_helper.gemspec",
+    "lib/tasks/mizugumo.rake",
+    "mizugumo.gemspec",
     "stylesheets/ninjascript.css",
     "stylesheets/ninjascript.sass",
     "stylesheets/sass/ninjascript.sass"
   ]
-  s.homepage = %q{http://github.com/IdahoEv/ninja_helper}
+  s.homepage = %q{http://github.com/IdahoEv/mizugumo}
   s.licenses = ["MIT"]
   s.require_paths = ["lib/"]
   s.rubygems_version = %q{1.3.7}

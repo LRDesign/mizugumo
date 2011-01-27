@@ -1,11 +1,11 @@
 require 'rails/generators/resource_helpers'
-require 'generators/rails/ninja_helper/view_generator'
+require 'generators/rails/mizugumo/view_generator'
 
 module NinjaHelper
   class HamlGenerator < ViewGenerator
     include ::Rails::Generators::ResourceHelpers
 
-    self.namespace("rails:ninja_helper:haml")
+    self.namespace("rails:mizugumo:haml")
     source_root File.dirname(__FILE__) + '/templates'
 
     def copy_html_view_files
