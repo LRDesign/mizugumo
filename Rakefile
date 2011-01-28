@@ -17,9 +17,7 @@ namespace :update do
 
   desc "get the most up-to-date version of NinjaScript"
   task :ninja_script do
-    sh 'cd ../NinjaScript'
-    sh 'git checkout master'
-    sh 'git pull'
+    sh 'cd ../NinjaScript; git checkout master; git pull'
     cp File.join(File.dirname(__FILE__), '..', 'NinjaScript', 'javascript', 'jquery.ninja_script.js'),
        File.join(File.dirname(__FILE__), 'lib', 'generators', 'mizugumo', 'install', 'templates', 'javascripts')
   end
