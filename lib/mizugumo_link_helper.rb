@@ -40,11 +40,17 @@ module MizugumoLinkHelper
     options       = args[0] || {}
     html_options  = args[1]
     action        = url_for(options)
+    # debugger
+    method = html_options[:method]
+
     cssclass      = [ 'mizugumo_graceful_form' ]
     cssclass      << html_options[:class] unless html_options[:class].blank?
+    html_options = convert_options_to_data_attributes(options, html_options)
+    html_options.merge!({:action => action, :method => :post, :title => title, :class => cssclass})
+    html_options.delete('rel')
 
-    content_tag(:form,  :action => action, :method => :post, :title => title, :class => cssclass) do
-      hidden_field_tag("_method", html_options[:method]) +
+    content_tag(:form, html_options) do
+      hidden_field_tag("_method", method) +
       hidden_field_tag("authenticity_token", session[:_csrf_token]) +
       submit_element
     end
