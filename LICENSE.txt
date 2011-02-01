@@ -1,4 +1,6 @@
-Copyright (c) 2011 Evan Dorn
+Copyright (c) 2011 Evan Dorn and Logical Reality Design
+
+Includes a copy of NinjaScript, itself copyright (c) 2010-2011 Judson Lester and Logical Reality Design
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
