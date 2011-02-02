@@ -1,0 +1,68 @@
+%h1 Mizugumo &#8121; Purpose
+
+%p
+  Mizugumo exists to help Rails developers quickly build apps that are both AJAXy and that degrade
+  gracefully when JavaScript is absent.   It uses NinjaScript to provide unobtrusive javascript
+  behaviors.
+
+%h2 Graceful Degradation
+
+%h3 Why we care
+
+%p
+  Rails developers are notorious for making apps that do not degrade well when JS is unavailable,
+  especially if the app uses AJAX for some actions. It's hard to blame anyone - generally, adding
+  AJAX is a bit of a pain, and adding degradation requires duplicating a lot of development.
+
+%p
+  Ideally, we should put the effort into graceful degradation because we can't count on JavaScript
+  in real-world conditions.   Some situations we care about in which JavaScript might not be
+  available:
+
+  %ul
+    %li NoScript users and other security-conscious folk
+    %li Screen readers for vision-impaired users
+    %li Search engines and spiders, which should see as accurate
+    %li Automation tools
+
+%h3 How to solve the problem
+
+%p
+  Because the client sees the normal, JS-enabled behavior, and because we are all busy people,
+  Rails developers usually won't make their sites degrade gracefully until it becomes no harder
+  to build in graceful degradation than not to.    Mizugumo aspires to this goal.
+
+%p
+  Mizugumo replaces some of rails' default behavior that depend on JS with ones that work
+  in the absence of JS.  Specifically, link_to with a :method option other than GET actually
+  outputs a <form>, not an <a href='foo'>.   It then provides a default javascript behavior,
+  written in NinjaScript, to implicitly convert those forms
+
+%p
+  Mizugumo also provides a scaffold tool that gives you an out-of-the box AJAX controller
+  in which all actions degrade perfectly in the absence of JS.  From that scaffold, it becomes
+  much easier to build rich behaviors into your sites while maintaining JS-less functionality.
+
+%h2 The Philosophy of Ninja-like Unobtrusiveness
+
+%p
+  The goal of Mizugumo's JS engine, NinjaScript, is to make javascript super easy to use, and
+  reliable for the developer &%8212; no surprises.
+
+%3 CSS is Great, JS Sucks
+
+%p
+  We take for granted CSS's super-easy behavior:  specify a selector and add a style.  That style
+  will always apply to anything that matches that selector, even if the DOM is restructured.  JavaScript
+  is not like this, however: if we use a library (say jQuery) to bind events to a selector, event
+  handlers will get bound to the DOM nodes that match that selector *now*, but elements that get added
+  later are out of luck.   We can fix event handlers with event delegation methods, but that still
+  doesn't help us if what we want to do is transform elements.   If I write a javascript block to
+  add rounded corners to a bunch of elements, or to add tooltip elements to a bunch of <li> nodes,
+  it will only make those changes to the elements that match at the time it is run.
+
+%p
+  NinjaScripts aims to make JS as much like CSS as possible: specify a behavior once - including
+  transformations of the elements themselves - and those behaviors will always apply to all elements
+  even if
+

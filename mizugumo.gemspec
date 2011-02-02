@@ -20,9 +20,9 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION"
   ]
-  spec.files		+= Dir.glob("lib/**/*")
-  spec.files		+= Dir.glob("doc/**/*")
-  spec.files		+= Dir.glob("spec/**/*")
+  s.files		+= Dir.glob("lib/**/*")
+  s.files		+= Dir.glob("doc/**/*")
+  s.files		+= Dir.glob("spec/**/*")
 
   s.homepage = %q{http://github.com/IdahoEv/mizugumo}
   s.licenses = ["MIT"]
