@@ -9,8 +9,15 @@ sensible page-reload behavior when javascript is not available.
 Mizugumo uses NinjaScript by Judson Lester to provide unobtrusive JS behaviors.   For more info, see:
   git@github.com:LRDesign/NinjaScript.git
 
-Mizugumo is currently in development and is not ready for public use.  We
-are expecting a release later this week (note written 1/26/2010).
+== WARNINGS
+
+In the current (early release) version, Mizugumo and NinjaScript have some limitations.   Notably, in
+this version they will clobber rails.js - even the jQuery version - and prevent its behaviors from
+working.  You should not install Mizugumo if you depend on Rails' default (semi-obtrusive) approaches
+to AJAX working.
+
+In addition, NinjaScript currently requires jQuery 1.4.2.  It is NOT compatible with the current version of
+jQuery, 1.4.4.   We are eagerly working on a fix.
 
 == Features
 
