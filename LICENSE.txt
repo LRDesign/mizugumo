@@ -2,6 +2,15 @@ Copyright (c) 2011 Evan Dorn and Logical Reality Design
 
 Includes a copy of NinjaScript, itself copyright (c) 2010-2011 Judson Lester and Logical Reality Design
 
+Includes a copy of jQuery 1.4.2, Copyright 2010 John Resig
+Dual licensed under the MIT or GPL Version 2 licenses.
+http://jquery.org/license
+
+Includes a copy of a jQuery-1.4.2 - compatible implementation of
+Rails 3's 'rails.js', available from: https://gist.github.com/704387
+
+--------------------------------------------------------------------
+
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including

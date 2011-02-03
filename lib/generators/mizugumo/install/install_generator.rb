@@ -36,14 +36,15 @@ ADDITIONAL_JS
         say (<<NOTICE
 
 Mizugumo is installed!
-Remember to remove the default JS and link to the jQuery/NinjaScript
-script and CSS files by adding these to your application layout:
+Remember to remove the default JS and link to the jQuery/NinjaScript script and CSS files by adding these to your application layout:
 
   <%= stylesheet_link_tag 'mizugumo.css' %>
   <%= javascript_include_tag 'jquery-1.4.2.js' %>
   <%= javascript_include_tag 'jquery.ninja_script.js' %>
+  <%= javascript_include_tag 'rails.js' %>
   <%= javascript_include_tag 'application.js' %>
 
+The included rails.js is a jQuery-1.4.2 compatible implementation of rails.js, and should replace the default rails.js.
 If you want to use the Mizugumo AJAX scaffold generators, add this to your application.rb:
 
   config.generators do |g|
