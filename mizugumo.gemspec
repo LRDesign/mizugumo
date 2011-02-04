@@ -5,7 +5,11 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Evan Dorn"]
   s.date = %q{2011-02-03}
-  s.description = %q{Seamless UJS for Rails using NinjaScript}
+  s.summary = %q{Seamless UJS for Rails using NinjaScript}
+  s.description = %q{Seamless UJS for Rails using NinjaScript.
+    Get RESTFul delete links that work without JavaScript and AJAXy
+    behavior that degrades gracefully right out of your scaffold!
+  }
   s.email = %q{evan@lrdesign.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -28,7 +32,6 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib/"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Seamless UJS for Rails using NinjaScript}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

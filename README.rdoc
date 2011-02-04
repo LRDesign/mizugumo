@@ -6,18 +6,21 @@ Mizugumo is a gem designed to provide Rails with JavaScript and AJAX behavior th
 * gracefully-degrading: defaults to fully functional and
 sensible page-reload behavior when javascript is not available.
 
+See a demo running at:
+  http://mizugumo-demo.lrdesign.com
+Or download the code for the demo at:
+  https://github.com/LRDesign/mizugumo_demo
+
 Mizugumo uses NinjaScript by Judson Lester to provide unobtrusive JS behaviors.   For more info, see:
   git@github.com:LRDesign/NinjaScript.git
 
 == WARNINGS
 
-In the current (early release) version, Mizugumo and NinjaScript have some limitations.   Notably, in
-this version they will clobber rails.js - even the jQuery version - and prevent its behaviors from
-working.  You should not install Mizugumo if you depend on Rails' default (semi-obtrusive) approaches
-to AJAX working.
+In the current (early release) version, Mizugumo and NinjaScript have some limitations.   Notably, in this version they will clobber the normal rails.js and prevent its behaviors from
+working.  The installer will copy a jQuery-compatible version of rails.js that you should
+use instead if you depend on Rails' default (semi-obtrusive) approaches to AJAX, link_to with :confirm =>'Are you sure?' and similar things working.
 
-In addition, NinjaScript currently requires jQuery 1.4.2.  It is NOT compatible with the current version of
-jQuery, 1.4.4.   We are eagerly working on a fix.
+In addition, NinjaScript currently requires jQuery 1.4.2.  It is NOT compatible with the current version of jQuery, 1.4.4, or the development version 1.5.   We are eagerly working on a fix.
 
 == Features
 
@@ -126,6 +129,8 @@ For HAML views:
 
 == Contributing to Mizugumo
 
+* Install MizugumoDemo and make sure that its tests still pass with your version of Mizugumo!
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -134,8 +139,14 @@ For HAML views:
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
+== Reporting Bugs
+
+Use the GitHub issue tracker.
+
 == Copyright
 
 Copyright (c) 2011 Evan Dorn and Logical Reality design. See LICENSE.txt for
 further details.
+
+Web Development by Logical Reality Design: http://LRDesign.com
 
