@@ -3,8 +3,7 @@
 Mizugumo is a gem designed to provide Rails with JavaScript and AJAX behavior that is:
 * absolutely seamless
 * completely unobtrusive - no markup whatsoever in your HTML and
-* gracefully-degrading: defaults to fully functional and
-sensible page-reload behavior when javascript is not available.
+* gracefully-degrading: defaults to fully functional and sensible page-reload behavior when JavaScript is not available.
 
 See a demo running at:
   http://mizugumo-demo.lrdesign.com
@@ -16,18 +15,21 @@ Mizugumo uses NinjaScript by Judson Lester to provide unobtrusive JS behaviors. 
 
 == WARNINGS
 
-In the current (early release) version, Mizugumo and NinjaScript have some limitations.   Notably, in this version they will clobber the normal rails.js and prevent its behaviors from
+In the current (early release) version, Mizugumo and NinjaScript have some limitations.
+Notably, in this version they will clobber the normal rails.js and prevent its behaviors from
 working.  The installer will copy a jQuery-compatible version of rails.js that you should
-use instead if you depend on Rails' default (semi-obtrusive) approaches to AJAX, link_to with :confirm =>'Are you sure?' and similar things working.
+use instead if you depend on Rails' default (semi-obtrusive) approaches to AJAX, 
+link_to with :confirm =>'Are you sure?' and similar things working.
 
-In addition, NinjaScript currently requires jQuery 1.4.2.  It is NOT compatible with the current version of jQuery, 1.4.4, or the development version 1.5.   We are eagerly working on a fix.
+In addition, NinjaScript currently requires jQuery 1.4.2.  It is NOT compatible with the current version of jQuery, 1.5.
+We are eagerly working on a fix.
 
 == Features
 
 Mizugumo's main features are:
 * Easy tools for installing NinjaScript
-* A rails helper to automatically output <form>s instead of <a> tags when link_to is called with a :method other than GET.   This allows these links to function as intended for users who lack javascript.
-* A default NinjaScript behavior (in your application.js) that automatically converts those forms back into the expected links when Javascript is available, resulting in transparent usability for JS users.
+* A Rails helper to automatically output <form>s instead of <a> tags when link_to is called with a :method other than GET.   This allows these links to function as intended for users who lack JavaScript.
+* A default NinjaScript behavior (in your application.js) that automatically converts those forms back into the expected links when JavaScript is available, resulting in transparent usability for JS users.
 * A scaffold generator that builds both both AJAX behavior and standard "page-reload"  behavior in the controller and view and adds NinjaScript  behaviors to application.js to activate AJAX.  Out of the box, your scaffolded controller will function as an AJAX controller when JS is available but will degrade properly when JS is not available.
 
 == Installing
@@ -41,7 +43,7 @@ First, add Mizugumo to your gemfile:
 
 Second, install Mizugumo files:
 
-  > rails generate mizugumo:install
+  rails generate mizugumo:install
 
 Third, link to jQuery and NinjaScript in your application layout, plus the optional ninjascript.css.  If using ERB, add these lines:
 
@@ -66,7 +68,8 @@ side-by-side with Prototype.
 Rails' concept of REST runs headlong into the desire to make a site degrade
 gracefully.   Specifically, the link_to() helper, when passed a method other
 than 'get', outputs a link with a data-method attribute that won't work
-when JS is absent.   To wit:  link_to('Delete Item', @item, :method => 'delete') in rails outputs this:
+when JS is absent.   To wit:  link_to('Delete Item', @item, :method => 'delete') 
+in Rails outputs this:
 
    <a href='/items/1' data-method='delete'>Delete Item</a>
 
@@ -110,7 +113,8 @@ complex GET links.
 
 == Scaffold generator
 
-Mizugumo ships with a scaffold generator that builds out-of-the-box AJAX/UJS scaffolds that degrade gracefully in the absence of JavaScript.   To use it, add this to config/application.rb:
+Mizugumo ships with a scaffold generator that builds out-of-the-box AJAX/UJS scaffolds that degrade 
+gracefully in the absence of JavaScript.   To use it, add this to config/application.rb:
 
 For ERB views:
 
@@ -119,7 +123,7 @@ For ERB views:
     g.template_engine 'mizugumo:erb'
   end
 
-For HAML views:
+For Haml views:
 
   config.generators do |g|
     g.scaffold_controller 'mizugumo:scaffold_controller'
@@ -130,7 +134,6 @@ For HAML views:
 == Contributing to Mizugumo
 
 * Install MizugumoDemo and make sure that its tests still pass with your version of Mizugumo!
-
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -145,7 +148,7 @@ Use the GitHub issue tracker.
 
 == Copyright
 
-Copyright (c) 2011 Evan Dorn and Logical Reality design. See LICENSE.txt for
+Copyright (c) 2011 Evan Dorn and Logical Reality Design. See LICENSE.txt for
 further details.
 
 Web Development by Logical Reality Design: http://LRDesign.com
