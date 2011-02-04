@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name = %q{mizugumo}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Evan Dorn"]
-  s.date = %q{2011-01-25}
+  s.date = %q{2011-02-03}
   s.description = %q{Seamless UJS for Rails using NinjaScript}
   s.email = %q{evan@lrdesign.com}
   s.extra_rdoc_files = [
@@ -24,10 +24,10 @@ Gem::Specification.new do |s|
   s.files		+= Dir.glob("doc/**/*")
   s.files		+= Dir.glob("spec/**/*")
 
-  s.homepage = %q{http://github.com/IdahoEv/mizugumo}
+  s.homepage = %q{http://github.com/LRDesign/mizugumo}
   s.licenses = ["MIT"]
   s.require_paths = ["lib/"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.3.5}
   s.summary = %q{Seamless UJS for Rails using NinjaScript}
 
   if s.respond_to? :specification_version then
