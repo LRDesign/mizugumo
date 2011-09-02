@@ -35,9 +35,12 @@ pkg
 tmtags
 
 # For emacs:
-#*~
-#\#*
-#.\#*
-#
+*~
+\#*
+.\#*
+
 # For vim:
-#*.swp
+*.swp
+
+# tempfiles when auto-updating NS
+temp

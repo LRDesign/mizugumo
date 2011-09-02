@@ -39,8 +39,8 @@ Mizugumo is installed!
 Remember to remove the default JS and link to the jQuery/NinjaScript script and CSS files by adding these to your application layout:
 
   <%= stylesheet_link_tag 'mizugumo.css' %>
-  <%= javascript_include_tag 'jquery-1.4.2.js' %>
-  <%= javascript_include_tag 'jquery.ninja_script.js' %>
+  <%= javascript_include_tag 'jquery-1.6.2.min.js' %>
+  <%= javascript_include_tag 'ninjascript.js' %>
   <%= javascript_include_tag 'rails.js' %>
   <%= javascript_include_tag 'application.js' %>
 
