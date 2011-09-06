@@ -22,10 +22,12 @@ namespace :update do
        #File.join(File.dirname(__FILE__), 'lib', 'generators', 'mizugumo', 'install', 'templates', 'javascripts')
     mkdir_p 'temp'
     sh 'cd temp; wget --no-check-certificate https://github.com/downloads/LRDesign/NinjaScript/ninjascript.zip'
-    sh 'cd temp; unzip ninjascript.zip'     
-    cwd = File.dirname(__FILE__)  
+    sh 'cd temp; unzip ninjascript.zip'
+    cwd = File.dirname(__FILE__)
     cp File.join(cwd, 'temp', 'generated', 'javascript', 'ninjascript.js'),
-       File.join(cwd, 'lib', 'generators', 'mizugumo', 'install', 'templates', 'javascripts')     
+       File.join(cwd, 'lib', 'generators', 'mizugumo', 'install', 'templates', 'javascripts')
+    cp File.join(cwd, 'temp', 'generated', 'javascript', 'ns.min.js'),
+       File.join(cwd, 'lib', 'generators', 'mizugumo', 'install', 'templates', 'javascripts')
   end
 
   task :ns => :ninja_script
