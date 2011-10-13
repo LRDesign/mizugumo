@@ -21,9 +21,6 @@ working.  The installer will copy a jQuery-compatible version of rails.js that y
 use instead if you depend on Rails' default (semi-obtrusive) approaches to AJAX, 
 link_to with :confirm =>'Are you sure?' and similar things working.
 
-In addition, NinjaScript currently requires jQuery 1.4.2.  It is NOT compatible with the current version of jQuery, 1.5.
-We are eagerly working on a fix.
-
 == Features
 
 Mizugumo's main features are:
