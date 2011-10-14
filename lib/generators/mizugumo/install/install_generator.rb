@@ -56,6 +56,15 @@ Javascript files have been added to your app/assets/javascripts directory.   You
 other JS files. 
 
 A few default style rules have been added as well as app/assets/stylesheets/mizugumo.sass.
+
+If you want to use the Mizugumo AJAX scaffold generators, add this to your application.rb:
+
+  config.generators do |g|
+    g.scaffold_controller 'mizugumo:scaffold_controller'
+    g.template_engine 'mizugumo:erb'
+    # g.template_engine 'mizugumo:haml' # If you prefer Haml over ERB
+  end
+
 NOTICE
         else
           say (<<NOTICE
