@@ -12,13 +12,24 @@ DESC
       end
 
       def copy_files
-        directory 'images',     'public/images'
-        directory 'javascripts', 'public/javascripts'
-        directory 'stylesheets', 'public/stylesheets'
+        if Mizugumo::RAILS_31
+          directory 'images',      'app/assets/images'
+          directory 'javascripts', 'app/assets/javascripts'
+          directory 'stylesheets', 'app/assets/stylesheets'
+        else          
+          directory 'images',     'public/images'
+          directory 'javascripts', 'public/javascripts'
+          directory 'stylesheets', 'public/stylesheets'
+        end
       end
 
       def add_javascript
-        file = File.join("public", "javascripts", "application.js")
+        if Mizugumo::RAILS_31
+          file = File.join("app", "assets", "javascripts", "mizugumo.js")
+          create_file(file)
+        else
+          file = File.join("public", "javascripts", "application.js")
+        end
         append_to_file(file) do
           <<ADDITIONAL_JS
 
@@ -36,18 +47,29 @@ ADDITIONAL_JS
       end
 
       def reminder
-        say (<<NOTICE
+        if Mizugumo::RAILS_31
+          say (<<NOTICE )
 
 Mizugumo is installed!
-Remember to remove the default JS and link to the jQuery/NinjaScript script and CSS files by adding these to your application layout:
+
+Javascript files have been added to your app/assets/javascripts directory.   You may need to check them for compatibility with your
+other JS files. 
+
+A few default style rules have been added as well as app/assets/stylesheets/mizugumo.sass.
+NOTICE
+        else
+          say (<<NOTICE
+
+Mizugumo is installed!
+Remember to remove the default JS and link to the jQuery/NinjaScript script and CSS files by adding these to your application layout.  Note: it is important that ninjascript load after jquery, but before your application.js or any mizugumo-related code you write!
 
   <%= stylesheet_link_tag 'mizugumo.css' %>
-  <%= javascript_include_tag 'jquery-1.6.2.min.js' %>
+  <%= javascript_include_tag 'jquery-1.6.4.min.js' %>
   <%= javascript_include_tag 'ninjascript.js' %>
   <%= javascript_include_tag 'rails.js' %>
   <%= javascript_include_tag 'application.js' %>
 
-The included rails.js is a jQuery-1.4.2 compatible implementation of rails.js, and should replace the default rails.js.
+The included rails.js is a jQuery compatible implementation of rails.js, and should replace the default rails.js.
 If you want to use the Mizugumo AJAX scaffold generators, add this to your application.rb:
 
   config.generators do |g|
@@ -58,6 +80,7 @@ If you want to use the Mizugumo AJAX scaffold generators, add this to your appli
 
 NOTICE
         )
+        end
       end
     end
   end

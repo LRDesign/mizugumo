@@ -44,14 +44,14 @@ Second, install Mizugumo files:
 
 Third, link to jQuery and NinjaScript in your application layout, plus the optional ninjascript.css.  If using ERB, add these lines:
 
-  <%= javascript_include_tag 'jquery-1.4.2.js' %>
+  <%= javascript_include_tag 'jquery-1.6.4.js' %>
   <%= javascript_include_tag 'jquery.ninja_script.js' %>
   <%= javascript_include_tag 'application.js' %>
   <%= stylesheet_link_tag 'ninjascript' %>
 
 If using Haml, add these instead:
 
-  = javascript_include_tag 'jquery-1.4.2.js'
+  = javascript_include_tag 'jquery-1.6.4.js'
   = javascript_include_tag 'jquery.ninja_script.js'
   = javascript_include_tag 'application.js'
   = stylesheet_link_tag 'ninjascript'

@@ -8,4 +8,5 @@ group :development do
   gem 'haml'
   gem "jeweler", "~> 1.5.2"
   gem "rcov", ">= 0"
+  gem 'ruby-debug19'
 end

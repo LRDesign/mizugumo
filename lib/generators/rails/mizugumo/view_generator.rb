@@ -26,7 +26,14 @@ module Mizugumo
     end
 
     def add_javascript
-      file = File.join("public", "javascripts", "application.js")
+      if Mizugumo::RAILS_31
+        dir = File.join("app", "assets", "javascripts", plural_table_name)
+        empty_directory(dir)
+        file = File.join("app", "assets", "javascripts", plural_table_name, "mizugumo.js")
+        create_file(file)
+      else
+        file = File.join("public", "javascripts", "application.js")
+      end
       append_to_file(file) do
         <<ADDITIONAL_JS
 Ninja.behavior({
