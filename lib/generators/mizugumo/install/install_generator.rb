@@ -13,7 +13,7 @@ DESC
 
       def copy_files
         if Mizugumo::RAILS_31
-          directory 'images',      'app/assets/images'
+          directory 'images',      'public/images'
           copy_file 'javascripts/ninjascript.js', 'app/assets/javascripts/ninjascript.js'
           copy_file 'javascripts/mizugumo.js', 'app/assets/javascripts/mizugumo.js'
           copy_file 'javascripts/ninja_go.js', 'app/assets/javascripts/ninja_go.js'
@@ -26,8 +26,8 @@ DESC
           append_to_file(@manifest){ '//= require ninja_go' }
         else          
           directory 'images',     'public/images'
-          copy_file 'javascripts/jquery-1.6.4.min.js', 'app/assets/javascripts/ninjascript.js'
-          copy_file 'javascripts/ninjascript.js', 'app/assets/javascripts/ninjascript.js'
+          copy_file 'javascripts/jquery-1.6.4.min.js', 'public/javascripts/jquery-1.6.4.min.js'
+          copy_file 'javascripts/ninjascript.js', 'public/javascripts/ninjascript.js'
           directory 'stylesheets', 'public/stylesheets'
         end
       end
@@ -37,10 +37,14 @@ DESC
 
         file = File.join("public", "javascripts", "application.js")
         
+        mg_file = File.open(File.join(InstallGenerator.source_root, "javascripts", "mizugumo.js"))
         append_to_file(file) do
-          read_file(File.join("javascripts", "mizugumo.js"))
-          # TODO:  Insert "Ninja.go()" in the end of the block inserted above
+          mg_file.read
         end
+        mg_file.close
+        insert_into_file(file, :after => '});') do
+           "\n  Ninja.go(); // This must be the last line of your NinjaScript definitions!"
+        end 
       end
 
       def reminder
