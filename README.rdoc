@@ -153,17 +153,19 @@ with the code is created in app/assets/javascripts/<controller_name>.js.
 
 == FAQ
 
-=== What is Ninja.orders()??
+=== What is Ninja.orders()?
 
 NinjaScript's development is modularized using the RequireJS library.   One unfortunate
-side effect of RequireJS is that the modules get loaded asynchronously.  So, if you
-required NinjaScript and then began defining Ninja behaviors like so:
+side effect of RequireJS is that modules get loaded asynchronously, and so even if
+a file is required first, its code is not guaranteed to be available when you load
+a subsjquent file.  So, if you required NinjaScript.js, and then began defining Ninja 
+behaviors like so:
 
     Ninja.behavior({ 'selector': Ninja.someCoolBehavior } )
 
 It is possible that Ninja's behaviors are not fully loaded, because RequireJS hasn't 
-finished loading them.  So, Ninja.orders() is defined to queue up all commands
-(behaviors and the "go") command, so that they will get executed later, when
+finished loading them.  Boo!  So, Ninja.orders() is defined so to queue up all commands
+(behaviors and the "go") command, so that they will get executed as soon as 
 NinjaScript has finished loading.
 
 == Contributing to Mizugumo
@@ -185,6 +187,8 @@ Use the GitHub issue tracker.
 
 Copyright (c) 2011 Evan Dorn and Logical Reality Design. See LICENSE.txt for
 further details.
+
+NinjaScript is copyright (c) 2011 Judson Lester and Logical Reality Design.
 
 Web Development by Logical Reality Design: http://LRDesign.com
 
