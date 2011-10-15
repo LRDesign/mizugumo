@@ -40,10 +40,10 @@ ADDITIONAL_JS
 
       if Mizugumo::RAILS_31
         file = File.join("app", "assets", "javascripts", "#{plural_table_name}.js")
-        create_file(file, js_content)
+        create_file(file){ js_content }
       else
         file = File.join("public", "javascripts", "application.js")
-        append_to_file(file, js_content)
+        append_to_file(file) { js_content }
       end
     end
 
