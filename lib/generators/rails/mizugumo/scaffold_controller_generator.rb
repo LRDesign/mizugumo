@@ -17,6 +17,9 @@ module Mizugumo
     end
 
     hook_for :template_engine, :test_framework, :in => :rails, :as => :scaffold
+    #if Mizugumo::RAILS_31
+    hook_for 'assets', :in => :rails, :as => :scaffold
+    #end
 
     # Invoke the helper using the controller name (pluralized)
     hook_for :helper, :in => :rails, :as => :scaffold do |invoked|

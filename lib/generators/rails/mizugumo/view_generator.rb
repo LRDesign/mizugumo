@@ -25,7 +25,10 @@ module Mizugumo
       end
     end
 
+    # in Rails 3.0, this gets injected into application.js.
+    # in Rails 3.1, it's handled by overriding the JS Assets Generator
     def add_javascript
+      return if Mizugumo::RAILS_31 
       js_content = <<ADDITIONAL_JS
 Ninja.orders(function(Ninja){        
   Ninja.behavior({
@@ -37,14 +40,9 @@ Ninja.orders(function(Ninja){
   });
 })
 ADDITIONAL_JS
-
-      if Mizugumo::RAILS_31
-        file = File.join("app", "assets", "javascripts", "#{plural_table_name}.js")
-        create_file(file){ js_content }
-      else
-        file = File.join("public", "javascripts", "application.js")
-        append_to_file(file) { js_content }
-      end
+     file = File.join("public", "javascripts", "application.js")
+     append_to_file(file) { js_content }
+     
     end
 
   end

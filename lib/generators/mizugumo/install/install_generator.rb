@@ -12,13 +12,18 @@ DESC
       end
 
       def copy_files
-        debugger
         if Mizugumo::RAILS_31
           directory 'images',      'app/assets/images'
           copy_file 'javascripts/ninjascript.js', 'app/assets/javascripts/ninjascript.js'
           copy_file 'javascripts/mizugumo.js', 'app/assets/javascripts/mizugumo.js'
           copy_file 'javascripts/ninja_go.js', 'app/assets/javascripts/ninja_go.js'
           directory 'stylesheets', 'app/assets/stylesheets'
+          @manifest = 'app/assets/javascripts/application.js'
+          insert_into_file(@manifest, :after => '//= require jquery_ujs') do
+            "\n//= require ninjascript" +
+            "\n//= require mizugumo"
+          end
+          append_to_file(@manifest){ '//= require ninja_go' }
         else          
           directory 'images',     'public/images'
           copy_file 'javascripts/jquery-1.6.4.min.js', 'app/assets/javascripts/ninjascript.js'
@@ -53,8 +58,9 @@ If you want to use the Mizugumo AJAX scaffold generators, add this to your appli
 
   config.generators do |g|
     g.scaffold_controller 'mizugumo:scaffold_controller'
-    g.template_engine 'mizugumo:erb'
+    g.template_engine 'mizugumo:erb'    
     # g.template_engine 'mizugumo:haml' # If you prefer Haml over ERB
+    g.assets 'mizugumo:js_assets'    
   end
 
 NOTICE
