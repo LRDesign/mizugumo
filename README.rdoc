@@ -42,23 +42,36 @@ Second, install Mizugumo files:
 
   rails generate mizugumo:install
 
-Third, link to jQuery and NinjaScript in your application layout, plus the optional ninjascript.css.  If using ERB, add these lines:
+The next step depends on whether you are running Rails 3.0.x or 3.1.x. 
+
+=== Rails 3.0.x
+
+For 3.0.x, mizugumo will assume you are putting most of your application javascript code in public/javascripts/application.js.  The installer will have created a Ninja.orders() block in which to place Ninjascript behavior.   The last line of this block will be Ninja.go(), and that must remain the last line. 
+
+You will need to link to jQuery and NinjaScript in your application layout, and you may include the optional mizugumo.css.   (a SASS version is installed to public/stylesheets/sass/mizugumo.sass).
+
+Add these lines to your layout (in ERB):
 
   <%= javascript_include_tag 'jquery-1.6.4.js' %>
   <%= javascript_include_tag 'jquery.ninja_script.js' %>
   <%= javascript_include_tag 'application.js' %>
-  <%= stylesheet_link_tag 'ninjascript' %>
+  <%= stylesheet_link_tag 'mizugumo' %>
 
 If using Haml, add these instead:
 
   = javascript_include_tag 'jquery-1.6.4.js'
   = javascript_include_tag 'jquery.ninja_script.js'
   = javascript_include_tag 'application.js'
-  = stylesheet_link_tag 'ninjascript'
+  = stylesheet_link_tag 'mizugumo'
 
 NOTE:  If you still have javascript_include_tag :defaults, you probably want to remove it.
 Ninjascript is meant to work with jQuery, and we don't know what happens if you try to run it
 side-by-side with Prototype.
+
+=== Rails 3.1.x
+
+For 3.1.x, mizugumo uses the rails asset packager, so there is less for you to do.  ninjascript.js, mizugumo.js, and a file called ninja_go.js are added to your app/assets/javascripts directory, and lines are added to you manifest (app/assets/javascripts/application.js) to ensure that they are loaded in the right order.
+
 
 == Graceful degradation of :method => 'delete' (or PUT, or POST) links
 
@@ -118,6 +131,7 @@ For ERB views:
   config.generators do |g|
     g.scaffold_controller 'mizugumo:scaffold_controller'
     g.template_engine 'mizugumo:erb'
+    g.assets 'mizugumo:js_assets'   # Only needed for Rails 3.1, omit for Rails 3.0
   end
 
 For Haml views:
@@ -125,8 +139,32 @@ For Haml views:
   config.generators do |g|
     g.scaffold_controller 'mizugumo:scaffold_controller'
     g.template_engine 'mizugumo:haml'
+    g.assets 'mizugumo:js_assets'   # Only needed for Rails 3.1, omit for Rails 3.0
   end
 
+Run the scaffold generator as you would with any other Rails app.   Mizugumo will
+generate both HTML views (in ERB or HAML), and JavaScript views (action.js.rb) for
+the actions in each controller, and will generate the NinjaScript code to allow your 
+scaffold to function as an AJAX scaffold when Javascript is available.
+
+In Rails 3.0, the NinjaScript code is injected into public/javascripts/application.js, 
+inside the Ninja.orders() block created by the installer.   In Rails 3.1, a new file 
+with the code is created in app/assets/javascripts/<controller_name>.js.
+
+== FAQ
+
+=== What is Ninja.orders()??
+
+NinjaScript's development is modularized using the RequireJS library.   One unfortunate
+side effect of RequireJS is that the modules get loaded asynchronously.  So, if you
+required NinjaScript and then began defining Ninja behaviors like so:
+
+    Ninja.behavior({ 'selector': Ninja.someCoolBehavior } )
+
+It is possible that Ninja's behaviors are not fully loaded, because RequireJS hasn't 
+finished loading them.  So, Ninja.orders() is defined to queue up all commands
+(behaviors and the "go") command, so that they will get executed later, when
+NinjaScript has finished loading.
 
 == Contributing to Mizugumo
 
