@@ -21,6 +21,7 @@ namespace :update do
     #cp File.join(File.dirname(__FILE__), '..', 'NinjaScript', 'javascript', 'jquery.ninja_script.js'),
        #File.join(File.dirname(__FILE__), 'lib', 'generators', 'mizugumo', 'install', 'templates', 'javascripts')
     mkdir_p 'temp'
+    sh 'rm -f temp/ninjascript.zip'
     sh 'cd temp; wget --no-check-certificate https://github.com/downloads/LRDesign/NinjaScript/ninjascript.zip'
     sh 'cd temp; unzip ninjascript.zip'
     cwd = File.dirname(__FILE__)
