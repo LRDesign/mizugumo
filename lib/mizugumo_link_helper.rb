@@ -34,7 +34,7 @@ module MizugumoLinkHelper
         title = "block was passed"
       else
         title = contents
-        submit_element = submit_tag(title)
+        submit_element = button_tag(title, :type => 'submit')
       end
     end
     options       = args[0] || {}
