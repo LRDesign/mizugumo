@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name = %q{mizugumo}
-  s.version = "0.1.5"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Evan Dorn"]
-  s.date = %q{2013-05-15}
+  s.date = %q{2013-10-02}
   s.summary = %q{Seamless UJS for Rails using NinjaScript}
   s.description = %q{Seamless UJS for Rails using NinjaScript.
     Get RESTFul delete links that work without JavaScript and AJAXy
